@@ -22,16 +22,13 @@ public class Rock : MonoBehaviour
     private GameObject go_effect; // √§±º ¿Ã∆Â∆Æ
 
     [SerializeField]
-    private AudioSource audioSource;
+    private string strike_Sound;
     [SerializeField]
-    private AudioClip effect_sound;
-    [SerializeField]
-    private AudioClip effect_sound2;
+    private string destroy_Sound;
 
     public void Mining()
     {
-        audioSource.clip = effect_sound;
-        audioSource.Play();
+        SoundManager.instance.PlaySE(strike_Sound);
         var clone = Instantiate(go_effect, col.bounds.center, Quaternion.identity);
         Destroy(clone, 3f);
 
@@ -44,8 +41,7 @@ public class Rock : MonoBehaviour
 
     private void Destruction()
     {
-        audioSource.clip = effect_sound2;
-        audioSource.Play();
+        SoundManager.instance.PlaySE(destroy_Sound);
         col.enabled = false;
         Destroy(go_rock);
 
