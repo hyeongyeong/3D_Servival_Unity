@@ -27,11 +27,14 @@ public class WeaponManager : MonoBehaviour
     private CloseWeapon[] hands;
     [SerializeField]
     private CloseWeapon[] axes;
+    [SerializeField]
+    private CloseWeapon[] pickaxes;
 
     // 무기 접근
     private Dictionary<string, Gun> gunDictionary = new Dictionary<string, Gun>();
     private Dictionary<string, CloseWeapon> handDictionary = new Dictionary<string, CloseWeapon>();
     private Dictionary<string, CloseWeapon> axeDictionary = new Dictionary<string, CloseWeapon>();
+    private Dictionary<string, CloseWeapon> pickaxeDictionary = new Dictionary<string, CloseWeapon>();
 
     // 필요한 컴포넌트
     [SerializeField]
@@ -40,6 +43,8 @@ public class WeaponManager : MonoBehaviour
     private HandController theHandController;
     [SerializeField]
     private AxeController theAxeController;
+    [SerializeField]
+    private PickaxeController thePickaxeController;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +61,10 @@ public class WeaponManager : MonoBehaviour
         {
             axeDictionary.Add(axes[i].closeWeaponName, axes[i]);
         }
+        for (int i = 0; i < axes.Length; i++)
+        {
+            pickaxeDictionary.Add(pickaxes[i].closeWeaponName, pickaxes[i]);
+        }
     }
 
     // Update is called once per frame
@@ -70,13 +79,18 @@ public class WeaponManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                // 맨손?
+                // 총
                 StartCoroutine(ChangeWeaponCoroutine("GUN", "SubMachineGun1")); // 임시
             }
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                // 맨손?
+                // 도끼
                 StartCoroutine(ChangeWeaponCoroutine("AXE", "Axe")); // 임시
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                // 곡괭이
+                StartCoroutine(ChangeWeaponCoroutine("PICKAXE", "Pickaxe")); // 임시
             }
 
         }
@@ -113,6 +127,9 @@ public class WeaponManager : MonoBehaviour
             case "AXE":
                 AxeController.isActivate = false;
                 break;
+            case "PICKAXE":
+                PickaxeController.isActivate = false;
+                break;
         }
     }
 
@@ -129,6 +146,10 @@ public class WeaponManager : MonoBehaviour
         else if (_type == "AXE")
         {
             theAxeController.CloseWeaponChange(axeDictionary[_name]);
+        }
+        else if (_type == "PICKAXE")
+        {
+            thePickaxeController.CloseWeaponChange(pickaxeDictionary[_name]);
         }
     }
 }
