@@ -25,16 +25,21 @@ public class WeaponManager : MonoBehaviour
     private Gun[] guns;
     [SerializeField]
     private CloseWeapon[] hands;
+    [SerializeField]
+    private CloseWeapon[] axes;
 
     // 무기 접근
     private Dictionary<string, Gun> gunDictionary = new Dictionary<string, Gun>();
     private Dictionary<string, CloseWeapon> handDictionary = new Dictionary<string, CloseWeapon>();
-   
+    private Dictionary<string, CloseWeapon> axeDictionary = new Dictionary<string, CloseWeapon>();
+
     // 필요한 컴포넌트
     [SerializeField]
     private GunController theGunController;
     [SerializeField]
     private HandController theHandController;
+    [SerializeField]
+    private AxeController theAxeController;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +52,10 @@ public class WeaponManager : MonoBehaviour
         {
             handDictionary.Add(hands[i].closeWeaponName, hands[i]);
         }
+        for (int i = 0; i < axes.Length; i++)
+        {
+            axeDictionary.Add(axes[i].closeWeaponName, axes[i]);
+        }
     }
 
     // Update is called once per frame
@@ -57,13 +66,19 @@ public class WeaponManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 // 무기 교체 실행
-                StartCoroutine(ChangeWeaponCoroutine("HAND", "맨손")); // 임시
+                StartCoroutine(ChangeWeaponCoroutine("HAND", "hand")); // 임시
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 // 맨손?
                 StartCoroutine(ChangeWeaponCoroutine("GUN", "SubMachineGun1")); // 임시
             }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                // 맨손?
+                StartCoroutine(ChangeWeaponCoroutine("AXE", "Axe")); // 임시
+            }
+
         }
     }
 
@@ -92,8 +107,11 @@ public class WeaponManager : MonoBehaviour
                 theGunController.CancelReload();
                 GunController.isActivate = false;
                 break;
-            case "Hand":
+            case "HAND":
                 HandController.isActivate = false;
+                break;
+            case "AXE":
+                AxeController.isActivate = false;
                 break;
         }
     }
@@ -106,7 +124,11 @@ public class WeaponManager : MonoBehaviour
         }
         else if (_type == "HAND")
         {
-            theHandController.HandChange(handDictionary[_name]);
+            theHandController.CloseWeaponChange(handDictionary[_name]);
+        }
+        else if (_type == "AXE")
+        {
+            theAxeController.CloseWeaponChange(axeDictionary[_name]);
         }
     }
 }
