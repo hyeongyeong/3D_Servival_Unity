@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class HandController : CloseWeaponController
 {
-    public static bool isActivate = false;
+    public static bool isActivate = true;
+
+    private void Start()
+    {
+        WeaponManager.currentWeapon = currentCloseWeapon.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentCloseWeapon.anim;
+        SoundManager.instance.PlayBGM("memories");
+    }
 
     public override void CloseWeaponChange(CloseWeapon _closeWeapon)
     {
