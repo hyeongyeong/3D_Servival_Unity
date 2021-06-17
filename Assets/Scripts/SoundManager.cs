@@ -39,6 +39,20 @@ public class SoundManager : MonoBehaviour
         playSoundName = new string[audioSourceEffects.Length];
     }
 
+    public void PlayBGM(string _name)
+    {
+        for (int i = 0; i < bgmSounds.Length; i++)
+        {
+            if (_name == bgmSounds[i].name)
+            {
+                audioSourceBgm.clip = bgmSounds[i].clip;
+                audioSourceBgm.Play();
+                return;
+            }
+        }
+        Debug.Log(_name + "사운드가 SoundManager에 등록되지 않았습니다.");
+    }
+
     // Update is called once per frame
     public void PlaySE(string _name)
     {

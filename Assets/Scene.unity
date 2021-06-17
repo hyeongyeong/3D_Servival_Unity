@@ -1107,8 +1107,8 @@ MonoBehaviour:
   - name: 
     clip: {fileID: 0}
   bgmSounds:
-  - name: 
-    clip: {fileID: 0}
+  - name: memories
+    clip: {fileID: 8300000, guid: e38a97432a600e44bba9135cdd6a0282, type: 3}
   - name: 
     clip: {fileID: 0}
   - name: 
@@ -1120,11 +1120,6 @@ MonoBehaviour:
   - name: 
     clip: {fileID: 0}
   playSoundName:
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
 --- !u!4 &616329086
 Transform:
@@ -1404,9 +1399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc6549b102a410458acf45eedb40aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 15
-  crouchSpeed: 1.5
+  walkSpeed: 20
+  runSpeed: 30
+  crouchSpeed: 15
   jumpForce: 5
   crouchPosY: 0
   lookSensitivity: 4

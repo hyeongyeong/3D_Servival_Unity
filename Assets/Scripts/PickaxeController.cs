@@ -10,6 +10,7 @@ public class PickaxeController : CloseWeaponController
     {
         WeaponManager.currentWeapon = currentCloseWeapon.GetComponent<Transform>();
         WeaponManager.currentWeaponAnim = currentCloseWeapon.anim;
+        SoundManager.instance.PlayBGM("memories");
     }
 
     public override void CloseWeaponChange(CloseWeapon _closeWeapon)
