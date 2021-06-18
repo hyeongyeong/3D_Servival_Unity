@@ -26,6 +26,11 @@ public class Rock : MonoBehaviour
     [SerializeField]
     private string destroy_Sound;
 
+    [SerializeField]
+    private GameObject rock_item_prefab;
+    [SerializeField]
+    private int item_count;
+
     public void Mining()
     {
         SoundManager.instance.PlaySE(strike_Sound);
@@ -43,6 +48,11 @@ public class Rock : MonoBehaviour
     {
         SoundManager.instance.PlaySE(destroy_Sound);
         col.enabled = false;
+        for (int i = 0; i < item_count; i++)
+        {
+           Instantiate(rock_item_prefab, go_rock.transform.position, Quaternion.identity);
+        }
+
         Destroy(go_rock);
 
         go_debrix.SetActive(true);
