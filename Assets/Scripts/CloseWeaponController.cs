@@ -14,6 +14,12 @@ public abstract class CloseWeaponController : MonoBehaviour
 
     protected RaycastHit hitInfo;
 
+    private PlayerController thePlayerController;
+
+    private void Start()
+    {
+        thePlayerController = FindObjectOfType<PlayerController>();
+    }
 
     protected void TryAttack()
     {
@@ -21,26 +27,35 @@ public abstract class CloseWeaponController : MonoBehaviour
         {
             if (!isAttack)
             {
-                // 코루틴 실행.
-                StartCoroutine(AttackCoroutine());
+                if (CheckObject())
+                {
+                    if (currentCloseWeapon.isAxe && hitInfo.transform.tag == "Tree")
+                    {
+                        StartCoroutine(thePlayerController.TreeLookCoroutine(hitInfo.transform.GetComponent<TreeComponent>().GetTreeCenterPosistion()));
+                        StartCoroutine(AttackCoroutine("Chop", currentCloseWeapon.workDelayA, currentCloseWeapon.workDelayB, currentCloseWeapon.workDelay));
+                        return;
+                    }
+                }
+
+                StartCoroutine(AttackCoroutine("Attack", currentCloseWeapon.attackDelayA, currentCloseWeapon.attackDelayB, currentCloseWeapon.attackDelay));
             }
         }
     }
 
-    IEnumerator AttackCoroutine()
+    IEnumerator AttackCoroutine(string swingType, float _delayA, float _delayB, float _delayC)
     {
         isAttack = true;
-        currentCloseWeapon.anim.SetTrigger("Attack");
+        currentCloseWeapon.anim.SetTrigger(swingType);
 
-        yield return new WaitForSeconds(currentCloseWeapon.attackDelayA);
+        yield return new WaitForSeconds(_delayA);
         isSwing = true;
         // 공격 활성화 시점
         StartCoroutine(HitCoroutine());
 
-        yield return new WaitForSeconds(currentCloseWeapon.attackDelayB);
+        yield return new WaitForSeconds(_delayB);
         isSwing = false;
 
-        yield return new WaitForSeconds(currentCloseWeapon.attackDelay - currentCloseWeapon.attackDelayA - currentCloseWeapon.attackDelayB);
+        yield return new WaitForSeconds(_delayC - _delayA - _delayB);
         isAttack = false;
     }
 
