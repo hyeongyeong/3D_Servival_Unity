@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3605f910fe7f7474da5bb8cf76546b00, type: 3}
-  m_Name: Rock
+  m_Name: PotionYellow
   m_EditorClassIdentifier: 
-  itemName: Rock
-  itemDesc: "\uB3CC\uC870\uAC01"
-  itemType: 2
-  itemImage: {fileID: 21300000, guid: 2e8309b761c31b14c81f0155ceca5255, type: 3}
-  itemPrefab: {fileID: 1786637175889563915, guid: c47778e5efb313b4d852b08a60b722e7, type: 3}
+  itemName: PotionYellow
+  itemDesc: "\uAE30\uB825\uD3EC\uC158"
+  itemType: 1
+  itemImage: {fileID: 21300000, guid: 2e775ead4a2c0024a909d29a98f162a1, type: 3}
+  itemPrefab: {fileID: 375286740854980592, guid: ed44181fb73347c48a91af26343ffb3a, type: 3}
   weaponType: 

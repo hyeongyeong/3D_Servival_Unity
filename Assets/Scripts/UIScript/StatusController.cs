@@ -166,6 +166,21 @@ public class StatusController : MonoBehaviour
         if (currentHp <= 0)
             Debug.Log("캐릭터의 hp가 0이 되었습니다.");
     }
+    public void IncreaseSP(int _count)
+    {
+        if (currentSp + _count < sp)
+            currentSp += _count;
+        else
+            currentSp = sp;
+    }
+
+    public void DecreaseSP(int _count)
+    {
+        currentSp -= _count;
+
+        if (currentSp <= 0)
+            Debug.Log("캐릭터의 sp가 0이 되었습니다.");
+    }
 
     public void IncreaseDP(int _count)
     {
@@ -199,6 +214,24 @@ public class StatusController : MonoBehaviour
 
         if (currentHungry <= 0)
             Debug.Log("캐릭터의 배고픔이 0이 되었습니다.");
+    }
+
+    public void IncreaseSatisfy(int _count)
+    {
+        if (currentSatisfy + _count < satisfy)
+            currentSatisfy += _count;
+        else
+            currentSatisfy = satisfy;
+    }
+    public void DecreaseSatisfy(int _count)
+    {
+        if (currentSatisfy - _count < 0)
+            currentSatisfy = 0;
+
+        currentSatisfy -= _count;
+
+        if (currentSatisfy <= 0)
+            Debug.Log("캐릭터의 만족이 0이 되었습니다.");
     }
 
     public void IncreaseThirsty(int _count)

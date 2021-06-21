@@ -43,6 +43,5 @@ public class AxeController : CloseWeaponController
     void Update()
     {
         if (isActivate)
-            TryAttack();
-    }
+            TryAttack();    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     public Item item; // 획득한 아이템
     public int itemCount; // 획득한 아이템의 개수
@@ -15,17 +15,18 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
     private Text text_count;
     [SerializeField]
     private GameObject go_countImage;
-    private WeaponManager theWeaponManager;
     private Rect baseRect;
     private InputNumber theInputNumber;
+    private ItemEffectDatabase theItemEffectDatabase;
+
 
     void Start()
     {
+        theItemEffectDatabase = FindObjectOfType<ItemEffectDatabase>();
         theInputNumber = FindObjectOfType<InputNumber>();
         // get InventoryBase Rect
         baseRect = transform.parent.parent.GetComponent<RectTransform>().rect;
         // 계층 구조로 되어있는건 serialize field로 못찾음
-        theWeaponManager = FindObjectOfType<WeaponManager>();
     }
 
     private void SetColor(float _alpha)
@@ -78,17 +79,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
         {
             if(item != null)
             {
-                if(item.itemType == Item.ItemType.Equipment)
-                {
-                    // 장비 아이템 -> 장착
-                    StartCoroutine(theWeaponManager.ChangeWeaponCoroutine(item.weaponType, item.itemName));
-                }
-                else
-                {
-                    // 소모
-                    Debug.Log(item.itemName + "을 사용했습니다.");
+                theItemEffectDatabase.UseItem(item);
+                if(item.itemType == Item.ItemType.Used)
                     SetSlotCount(-1);
-                }
             }
         }
         
@@ -122,9 +115,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
             {
                 theInputNumber.Call();
             }
-            //Debug.Log("인벤토리 영역을 벗어났습니다.");
-            //Instantiate(DragSlot.instance.dragSlot.item.itemPrefab, theWeaponManager.transform.position + theWeaponManager.transform.forward, Quaternion.identity);
-            //DragSlot.instance.dragSlot.ClearSlot();
         }
         else
         {
@@ -157,5 +147,15 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDra
             DragSlot.instance.dragSlot.ClearSlot();
         }
     }
-    
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        theItemEffectDatabase.HideToolTip();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item != null)
+            theItemEffectDatabase.ShowToolTip(item, transform.position);
+    }
 }
