@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3605f910fe7f7474da5bb8cf76546b00, type: 3}
-  m_Name: SubMachineGun
+  m_Name: Twig
   m_EditorClassIdentifier: 
-  itemName: SubMachineGun1
-  itemType: 0
-  itemImage: {fileID: 21300000, guid: 44812f80093f738468b56dc1373e2354, type: 3}
-  itemPrefab: {fileID: 7927043455048618345, guid: c0fa4f12ffe6756458bc8419ee7b0f17, type: 3}
-  weaponType: GUN
+  itemName: Twig
+  itemType: 2
+  itemImage: {fileID: 21300000, guid: c7f36fce6ca691d4ca101e88b65ff952, type: 3}
+  itemPrefab: {fileID: 9047274580904766032, guid: 41d6b8cb54a8c98408627b4922476bab, type: 3}
+  weaponType: 

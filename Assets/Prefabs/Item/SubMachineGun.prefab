@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8431433900054393020}
   - component: {fileID: 1003587615270816781}
   - component: {fileID: 6799919087582879107}
+  - component: {fileID: 1448012930750565640}
   m_Layer: 10
   m_Name: SubMachineGun
   m_TagString: Item
@@ -111,3 +112,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 535a26a5e6dd60a4da44a92534b6c90b, type: 2}
+--- !u!54 &1448012930750565640
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7927043455048618345}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
