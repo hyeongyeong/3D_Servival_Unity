@@ -67,35 +67,6 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(!isChangeWeapon)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                // π´±‚ ±≥√º Ω««‡
-                StartCoroutine(ChangeWeaponCoroutine("HAND", "hand")); // ¿”Ω√
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                // √—
-                StartCoroutine(ChangeWeaponCoroutine("GUN", "SubMachineGun1")); // ¿”Ω√
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                // µµ≥¢
-                StartCoroutine(ChangeWeaponCoroutine("AXE", "Axe")); // ¿”Ω√
-            }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                // ∞Ó±™¿Ã
-                StartCoroutine(ChangeWeaponCoroutine("PICKAXE", "Pickaxe")); // ¿”Ω√
-            }
-
-        }
-    }
-
     public IEnumerator ChangeWeaponCoroutine(string _type, string _name)
     {
         isChangeWeapon = true;
@@ -141,6 +112,8 @@ public class WeaponManager : MonoBehaviour
         }
         else if (_type == "HAND")
         {
+            if (QuickSlotController.go_HandItem != null)
+                Destroy(QuickSlotController.go_HandItem);
             theHandController.CloseWeaponChange(handDictionary[_name]);
         }
         else if (_type == "AXE")

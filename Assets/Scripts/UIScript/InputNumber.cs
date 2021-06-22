@@ -76,6 +76,10 @@ public class InputNumber : MonoBehaviour
             DragSlot.instance.dragSlot.SetSlotCount(-1);
             yield return new WaitForSeconds(0.05f);
         }
+        if (int.Parse(textPreview.text) == _num)
+            if (QuickSlotController.go_HandItem != null)
+                Destroy(QuickSlotController.go_HandItem);
+
         DragSlot.instance.dragSlot = null;
         go_Base.SetActive(false);
         activated = false;

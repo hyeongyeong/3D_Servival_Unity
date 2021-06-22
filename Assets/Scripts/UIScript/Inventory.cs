@@ -12,12 +12,13 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     private GameObject go_SlotsParent;
-
+    private ItemEffectDatabase theItemEffectDatabase;
     private Slot[] slots;
 
     // Start is called before the first frame update
     void Start()
     {
+        theItemEffectDatabase = FindObjectOfType<ItemEffectDatabase>();
         slots = go_SlotsParent.GetComponentsInChildren<Slot>();
     }
 
@@ -47,6 +48,7 @@ public class Inventory : MonoBehaviour
 
     private void CloseInventory()
     {
+        theItemEffectDatabase.HideToolTip();
         go_InventoryBase.SetActive(false);
     }
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class HandController : CloseWeaponController
 {
     public static bool isActivate = true;
-
+    [SerializeField]
+    private QuickSlotController theQuickSlot;
     private void Start()
     {
         WeaponManager.currentWeapon = currentCloseWeapon.GetComponent<Transform>();
@@ -37,7 +38,21 @@ public class HandController : CloseWeaponController
     }
     void Update()
     {
-        if (isActivate)
-            TryAttack();
+        if (isActivate && !Inventory.inventoryActivated)
+        {
+            if (QuickSlotController.go_HandItem == null)
+                TryAttack();
+            else
+                TryEating();
+        }
+            
+    }
+    private void TryEating()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            currentCloseWeapon.anim.SetTrigger("Eat");
+            theQuickSlot.EatItem();
+        }
     }
 }

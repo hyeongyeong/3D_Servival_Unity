@@ -21,8 +21,16 @@ public class ItemEffectDatabase : MonoBehaviour
     private WeaponManager theWeaponManager;
     [SerializeField]
     private StatusController thePlayerController;
+    [SerializeField]
+    private QuickSlotController theQuickSlotController;
 
     private const string HP = "HP", SP = "SP", DP = "DP", HUNGRY = "HUNGRY", THIRSTY = "THIRSTY", SATISFY = "SATISFY";
+
+
+    public void IsActivatedQuickSlot(int _num)
+    {
+        theQuickSlotController.IsActivatedQuickSlot(_num);
+    }
 
     public void UseItem(Item _item)
     {

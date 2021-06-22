@@ -325,3 +325,4 @@ MonoBehaviour:
   itemImage: {fileID: 5667126616703419020}
   text_count: {fileID: 3605994108078640143}
   go_countImage: {fileID: 7704063698983702613}
+  quickSlotBaseRect: {fileID: 0}

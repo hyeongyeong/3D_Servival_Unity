@@ -15,17 +15,19 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     private Text text_count;
     [SerializeField]
     private GameObject go_countImage;
-    private Rect baseRect;
+    [SerializeField]
+    private RectTransform baseRect;
+    [SerializeField]
+    private RectTransform quickSlotBaseRect; // 퀵슬롯 영역
     private InputNumber theInputNumber;
     private ItemEffectDatabase theItemEffectDatabase;
-
+    [SerializeField] private bool isQuickSlot;
+    [SerializeField] private int quickSlotNumber;
 
     void Start()
     {
         theItemEffectDatabase = FindObjectOfType<ItemEffectDatabase>();
         theInputNumber = FindObjectOfType<InputNumber>();
-        // get InventoryBase Rect
-        baseRect = transform.parent.parent.GetComponent<RectTransform>().rect;
         // 계층 구조로 되어있는건 serialize field로 못찾음
     }
 
@@ -108,8 +110,10 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(DragSlot.instance.transform.localPosition.x < baseRect.xMin || DragSlot.instance.transform.localPosition.x > baseRect.xMax || 
-            DragSlot.instance.transform.localPosition.y < baseRect.yMin || DragSlot.instance.transform.localPosition.y > baseRect.yMax)
+        if (!((DragSlot.instance.transform.localPosition.x > baseRect.rect.xMin && DragSlot.instance.transform.localPosition.x < baseRect.rect.xMax && 
+            DragSlot.instance.transform.localPosition.y > baseRect.rect.yMin && DragSlot.instance.transform.localPosition.y < baseRect.rect.yMax) ||
+            (DragSlot.instance.transform.localPosition.x > quickSlotBaseRect.rect.xMin && DragSlot.instance.transform.localPosition.x < quickSlotBaseRect.rect.xMax &&
+            DragSlot.instance.transform.localPosition.y + baseRect.localPosition.y > quickSlotBaseRect.transform.localPosition.y - quickSlotBaseRect.rect.yMax && DragSlot.instance.transform.localPosition.y + baseRect.localPosition.y < quickSlotBaseRect.transform.localPosition.y - quickSlotBaseRect.rect.yMin)))
         {
             if(DragSlot.instance.dragSlot != null)
             {
@@ -128,7 +132,23 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         if(DragSlot.instance.dragSlot != null)
         {
             ChangeSlot();
+            if (isQuickSlot)
+            {
+                theItemEffectDatabase.IsActivatedQuickSlot(quickSlotNumber);
+            }
+            else
+            {
+                if (DragSlot.instance.dragSlot.isQuickSlot)
+                {
+                    theItemEffectDatabase.IsActivatedQuickSlot(DragSlot.instance.dragSlot.quickSlotNumber);
+                }
+            }
         }
+    }
+
+    public int GetQuickSlotNumber()
+    {
+        return quickSlotNumber;
     }
 
     private void ChangeSlot()
