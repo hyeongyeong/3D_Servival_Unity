@@ -91,7 +91,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(item != null)
+        if(item != null && Inventory.inventoryActivated)
         {
             DragSlot.instance.dragSlot = this;
             DragSlot.instance.SetDragImage(itemImage);
@@ -156,7 +156,16 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
         Item _tempItem = item;
         int _tempItemCount = itemCount;
 
-        AddItem(DragSlot.instance.dragSlot.item, DragSlot.instance.dragSlot.itemCount);
+        if(_tempItem != null && item.itemName == DragSlot.instance.dragSlot.item.itemName)
+        {
+            AddItem(DragSlot.instance.dragSlot.item, DragSlot.instance.dragSlot.itemCount + itemCount);
+            _tempItem = null;
+        }
+        else
+        {
+            AddItem(DragSlot.instance.dragSlot.item, DragSlot.instance.dragSlot.itemCount);
+        }
+        
 
         if(_tempItem != null)
         {

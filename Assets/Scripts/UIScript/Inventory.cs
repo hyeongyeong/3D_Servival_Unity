@@ -9,17 +9,22 @@ public class Inventory : MonoBehaviour
     // ÇÊ¿äÇÑ ÄÄÆ÷³ÍÆ®
     [SerializeField]
     private GameObject go_InventoryBase;
+    [SerializeField]
+    private GameObject go_QuickSlotParent;
 
     [SerializeField]
     private GameObject go_SlotsParent;
     private ItemEffectDatabase theItemEffectDatabase;
     private Slot[] slots;
+    private Slot[] quickSlots;
+    private bool isNotPut;
 
     // Start is called before the first frame update
     void Start()
     {
         theItemEffectDatabase = FindObjectOfType<ItemEffectDatabase>();
         slots = go_SlotsParent.GetComponentsInChildren<Slot>();
+        quickSlots = go_QuickSlotParent.GetComponentsInChildren<Slot>();
     }
 
     // Update is called once per frame
@@ -54,25 +59,37 @@ public class Inventory : MonoBehaviour
 
     public void AcquireItem(Item _item, int _count = 1)
     {
+        PutSlot(quickSlots, _item, _count);
+        if (isNotPut)
+            PutSlot(slots, _item, _count);
+        if (isNotPut)
+            Debug.Log("Äü½½·Ô°ú ÀÎº¥Åä¸®°¡ ²ËÃ¡½À´Ï´Ù");
+    }
+
+    private void PutSlot(Slot[] _slots, Item _item, int _count)
+    {
         if (Item.ItemType.Equipment != _item.itemType)
         {
-            for (int i = 0; i < slots.Length; i++)
+            for (int i = 0; i < _slots.Length; i++)
             {
-                if (slots[i].item != null && slots[i].item.itemName == _item.itemName)
+                if (_slots[i].item != null && _slots[i].item.itemName == _item.itemName)
                 {
-                    slots[i].SetSlotCount(_count);
+                    _slots[i].SetSlotCount(_count);
+                    isNotPut = false;
                     return;
                 }
             }
         }
 
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < _slots.Length; i++)
         {
-            if (slots[i].item == null)
+            if (_slots[i].item == null)
             {
-                slots[i].AddItem(_item, _count);
+                _slots[i].AddItem(_item, _count);
+                isNotPut = false;
                 return;
             }
         }
+        isNotPut = true;
     }
 }

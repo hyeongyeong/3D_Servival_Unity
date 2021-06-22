@@ -49,7 +49,7 @@ public class HandController : CloseWeaponController
     }
     private void TryEating()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !theQuickSlot.GetIsCoolTime())
         {
             currentCloseWeapon.anim.SetTrigger("Eat");
             theQuickSlot.EatItem();
