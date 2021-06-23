@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1819073360002774433}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3199181419675145002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_DownLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7729000839080243903}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_Upleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1707175741145491547}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_DownLeft_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356207066397966549}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tail_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8049855715685247558}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_Upright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4869977353406993383}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_DownRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 4506403458084068822}
   - component: {fileID: 4506403458084068823}
   - component: {fileID: 4506403458084068820}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pig
   m_TagString: GentleAnimal
   m_Icon: {fileID: 0}
@@ -296,11 +296,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: Pig
   hp: 2
+  attackRange: 2
   walkSpeed: 2
   runSpeed: 4
+  isDead: 0
   walkTime: 5
   waitTime: 4
   runTime: 6
+  itemPrefab: {fileID: 11400000, guid: 7d3421fa0a177e14aa97db1ebb3b1a4f, type: 2}
+  acquiredItem: 2
   anim: {fileID: 7981962296799592322}
   rigid: {fileID: 4506403458084068843}
   boxCol: {fileID: 4506403458084068842}
@@ -463,7 +467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4119030100902299039}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_Upleft_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2762813369767440345}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731520515294293895}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4428822185785189043}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_Upright_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6022500364172127843}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5908676899814620762}
   - component: {fileID: 1645133509707024202}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7317910447577670975}
   - component: {fileID: 7981962296799592322}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7230821986184059469}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Leg_DownRight_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2296815694847776486}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -70,6 +70,7 @@ public abstract class CloseWeaponController : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out hitInfo, currentCloseWeapon.range, layerMask))
         {
+            Debug.Log(layerMask.value);
             return true;
         }
         return false;

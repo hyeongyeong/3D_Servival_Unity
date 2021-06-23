@@ -17,8 +17,10 @@ public class PickaxeController : CloseWeaponController
     {
         while (isSwing)
         {
+            
             if (CheckObject())
             {
+                Debug.Log("CheckCheck");
                 if (hitInfo.transform.tag == "Rock")
                 {
                     hitInfo.transform.GetComponent<Rock>().Mining();
@@ -30,7 +32,9 @@ public class PickaxeController : CloseWeaponController
                 }
                 else if (hitInfo.transform.tag == "PreemptiveAnimal")
                 {
-                    
+                    Debug.Log("PREEMPTIVE");
+                    hitInfo.transform.GetComponent<PreemptiveAnimal>().Damage(currentCloseWeapon.damage, transform.position);
+                    SoundManager.instance.PlaySE("Animal_Hit");
                 }
 
 

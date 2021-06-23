@@ -155,6 +155,7 @@ public class StatusController : MonoBehaviour
 
     public void DecreaseHP(int _count)
     {
+        SoundManager.instance.PlaySE("Animal_Hit");
         if(currentDp >0)
         {
             DecreaseDP(_count);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FieldOfViewAngle : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class FieldOfViewAngle : MonoBehaviour
     [SerializeField] private LayerMask targetMask;
 
     private PlayerController thePlayer;
+    private NavMeshAgent nav;
 
     private void Start()
     {
         thePlayer = FindObjectOfType<PlayerController>();
+        nav = FindObjectOfType<NavMeshAgent>();
     }
 
     public Vector3 GetTargetPos()
@@ -31,8 +34,8 @@ public class FieldOfViewAngle : MonoBehaviour
         Vector3 _leftBoundary = BoundaryAngle(-viewAngle *0.5f);
         Vector3 _rightBoundary = BoundaryAngle(viewAngle * 0.5f);
         
-        Debug.DrawRay(transform.position + transform.up, _leftBoundary, Color.red);
-        Debug.DrawRay(transform.position + transform.up, _rightBoundary, Color.red);
+        Debug.DrawRay(transform.position + transform.up , _leftBoundary, Color.red);
+        Debug.DrawRay(transform.position + transform.up , _rightBoundary, Color.red);
 
         Collider[] _target = Physics.OverlapSphere(transform.position, viewDistance, targetMask);
 
@@ -57,7 +60,36 @@ public class FieldOfViewAngle : MonoBehaviour
                     }
                 }
             }
+            if (thePlayer.GetRun())
+            {
+                if(CalcPathLength(thePlayer.transform.position)<= viewDistance)
+                {
+                    return true;
+                }
+            }
+
         }
         return false;
     }
+
+    private float CalcPathLength(Vector3 _targetPos)
+    {
+        NavMeshPath _path = new NavMeshPath();
+        nav.CalculatePath(_targetPos, _path);
+
+        Vector3[] _wayPoint = new Vector3[_path.corners.Length + 2];
+
+        _wayPoint[0] = transform.position;
+        _wayPoint[_path.corners.Length + 1] = _targetPos;
+
+        float pathLength = 0;
+        for (int i = 0; i < _path.corners.Length; i++)
+        {
+            _wayPoint[i + 1] = _path.corners[i];
+            pathLength += Vector3.Distance(_wayPoint[i], _wayPoint[i + 1]);
+        }
+
+        return pathLength;
+    }
+
 }

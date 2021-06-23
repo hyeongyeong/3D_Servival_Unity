@@ -5,8 +5,9 @@ using UnityEngine.AI;
 
 public class Animal : MonoBehaviour
 {
-    [SerializeField] protected string animalName;
+    [SerializeField] public string animalName;
     [SerializeField] protected int hp;
+    [SerializeField] protected int attackRange;
 
     [SerializeField] protected float walkSpeed;
     [SerializeField] protected float runSpeed;
@@ -16,15 +17,20 @@ public class Animal : MonoBehaviour
     protected bool isWalking;
     protected bool isAction;
     protected bool isRunning;
-    protected bool isDead;
+    public bool isDead = false;
     protected bool isChasing;
+    protected bool isAttacking;
 
     [SerializeField] protected float walkTime;
     [SerializeField] protected float waitTime;
     [SerializeField] protected float runTime;
     protected float currentTime;
 
+    
     // 필요한 컴포넌트
+    [SerializeField] protected Item itemPrefab;
+    [SerializeField] public int acquiredItem;
+
     [SerializeField] protected Animator anim;
     [SerializeField] protected Rigidbody rigid;
     [SerializeField] protected BoxCollider boxCol;
@@ -35,9 +41,11 @@ public class Animal : MonoBehaviour
     [SerializeField] protected AudioClip[] sound_normal;
     [SerializeField] protected AudioClip sound_Hurt;
     [SerializeField] protected AudioClip sound_Dead;
+    protected StatusController statusController;
 
     void Start()
     {
+        statusController = FindObjectOfType<StatusController>();
         theViewAngle = GetComponent<FieldOfViewAngle>();
         nav = GetComponent<NavMeshAgent>();
         theAudio = GetComponent<AudioSource>();
@@ -67,7 +75,7 @@ public class Animal : MonoBehaviour
         if (isAction)
         {
             currentTime -= Time.deltaTime;
-            if (currentTime <= 0 && !isChasing)
+            if (currentTime <= 0 && !isChasing && !isAttacking)
                 // 다음 랜덤 행동
                 initialize();
         }
@@ -111,13 +119,14 @@ public class Animal : MonoBehaviour
             anim.SetTrigger("Hurt");
         }
     }
-    protected void Dead()
+    protected virtual void Dead()
     {
         PlaySE(sound_Dead);
-        isWalking = false;
-        isRunning = false;
-        isDead = true;
+        isWalking = false;isRunning = false; isChasing = false; isDead = true;
+        nav.ResetPath();
         anim.SetTrigger("Dead");
+        transform.GetComponentsInChildren(typeof(NavMeshAgent), false);
+        StopAllCoroutines();
     }
 
     protected void RandomSound()
@@ -130,4 +139,12 @@ public class Animal : MonoBehaviour
         theAudio.clip = _clip;
         theAudio.Play();
     }
+
+    public Item GetItem()
+    {
+        this.gameObject.tag = "Untagged";
+        Destroy(this.gameObject, 3f);
+        return itemPrefab;
+    }
+
 }

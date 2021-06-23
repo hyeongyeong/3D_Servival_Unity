@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    static public bool isActivated = true;
     // 스피드 조정 변수
     [SerializeField]
     private float walkSpeed;
@@ -70,16 +71,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IsGround();
-        TryJump();
-        TryRun();
-        TryCrouch();
-        Move();
-        MoveCheck();
-        if(!Inventory.inventoryActivated)
+        if (isActivated)
         {
-            CameraRotation();
-            CharacterRotation();
+            IsGround();
+            TryJump();
+            TryRun();
+            TryCrouch();
+            Move();
+            MoveCheck();
+            if (!Inventory.inventoryActivated)
+            {
+                CameraRotation();
+                CharacterRotation();
+            }
         }
     }
     private void MoveCheck()
@@ -248,5 +252,10 @@ public class PlayerController : MonoBehaviour
         myRigid.MoveRotation(myRigid.rotation * Quaternion.Euler(_characterRotationY));
         //Debug.Log(myRigid.rotation);
         //Debug.Log(myRigid.rotation.eulerAngles);
+    }
+
+    public bool GetRun()
+    {
+        return isRun;
     }
 }
