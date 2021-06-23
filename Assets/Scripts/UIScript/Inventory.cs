@@ -68,7 +68,7 @@ public class Inventory : MonoBehaviour
 
     private void PutSlot(Slot[] _slots, Item _item, int _count)
     {
-        if (Item.ItemType.Equipment != _item.itemType)
+        if (Item.ItemType.Equipment != _item.itemType) // 장비 아이템이 아닌 경우
         {
             for (int i = 0; i < _slots.Length; i++)
             {
@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-
+        
         for (int i = 0; i < _slots.Length; i++)
         {
             if (_slots[i].item == null)
@@ -91,5 +91,6 @@ public class Inventory : MonoBehaviour
             }
         }
         isNotPut = true;
+        
     }
 }

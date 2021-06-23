@@ -9,6 +9,9 @@ public class GunController : MonoBehaviour
     [SerializeField]
     private Gun currentGun;
 
+    [SerializeField]
+    private LayerMask layerMask;
+
     // 연사 속도 계산
     private float currentFireRate;
 
@@ -102,7 +105,7 @@ public class GunController : MonoBehaviour
     {
         if(Physics.Raycast(theCam.transform.position, theCam.transform.forward + 
             new Vector3(Random.Range(-theCrosshair.GetAccurary() - currentGun.accuracy, theCrosshair.GetAccurary() + currentGun.accuracy), Random.Range(-theCrosshair.GetAccurary() - currentGun.accuracy, theCrosshair.GetAccurary() + currentGun.accuracy), 0),
-            out hitInfo, currentGun.range))
+            out hitInfo, currentGun.range, layerMask))
         {
             // 충돌
             GameObject clone = Instantiate(hit_effect_prefab, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));

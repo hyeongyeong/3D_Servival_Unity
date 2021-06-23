@@ -19,10 +19,20 @@ public class PickaxeController : CloseWeaponController
         {
             if (CheckObject())
             {
-                if(hitInfo.transform.tag == "Rock")
+                if (hitInfo.transform.tag == "Rock")
                 {
                     hitInfo.transform.GetComponent<Rock>().Mining();
                 }
+                else if (hitInfo.transform.tag == "GentleAnimal")
+                {
+                    hitInfo.transform.GetComponent<GentleAnimal>().Damage(currentCloseWeapon.damage, transform.position);
+                    SoundManager.instance.PlaySE("Animal_Hit");
+                }
+                else if (hitInfo.transform.tag == "PreemptiveAnimal")
+                {
+                    
+                }
+
 
                 isSwing = false;
                 Debug.Log(hitInfo.transform.name);
