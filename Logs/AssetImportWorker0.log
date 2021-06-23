@@ -1079,3 +1079,11 @@ System memory in use after: 83.2 MB.
 Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2003.
 Total: 1.592900 ms (FindLiveObjects: 0.138800 ms CreateObjectMapping: 0.041300 ms MarkObjects: 1.397600 ms  DeleteObjects: 0.014200 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 6676.284773 seconds.
+  path: Assets/Prefabs/Animal/Tiger.prefab
+  artifactKey: Guid(967b0cbf3bad64a49a31ce573dbbec77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Animal/Tiger.prefab using Guid(967b0cbf3bad64a49a31ce573dbbec77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26a7fe241182ca39d6c6b10e0f98436a') in 0.507641 seconds
+  Import took 0.512609 seconds .
+
