@@ -24,6 +24,8 @@ public class Tiger : PreemptiveAnimal
             TryWalk();
 
     }
+
+
     private void Wait()
     {
         currentTime = waitTime;
