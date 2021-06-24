@@ -16,6 +16,9 @@ public class ActionController : MonoBehaviour
     private bool dissoveActivated = false;
     private bool isDissolving = false; // 고기 해체 중?
 
+
+    private bool fireLookActivated = false; // 불을 근접해서 바라볼 시 true
+
     private RaycastHit hitInfo; // 충돌체 정보 저장
 
     // 아이템 레이어에만 반응하도록 레이어 마스크 설정
@@ -28,6 +31,8 @@ public class ActionController : MonoBehaviour
     private Inventory theInventory;
     [SerializeField]
     private WeaponManager theWeaponManager;
+    [SerializeField]
+    private QuickSlotController theQuickSlot;
     [SerializeField]
     private Transform tf_MeatDissolveTool;
 
@@ -45,6 +50,7 @@ public class ActionController : MonoBehaviour
             CheckAction();
             CanPickUp();
             CanDissolve();
+            CanDropFire();
         }
     }
 
@@ -102,6 +108,8 @@ public class ActionController : MonoBehaviour
             {
                 MeatInfoAppear();
             }
+            else if (hitInfo.transform.tag == "Fire")
+                FireInfoAppear();
             else
             {
                 InfoDissapear();
@@ -111,8 +119,61 @@ public class ActionController : MonoBehaviour
             InfoDissapear();
     }
 
+    private void initialize()
+    {
+        pickupActivated = false;
+        dissoveActivated = false;
+        fireLookActivated = false;
+    }
+
+    private void FireInfoAppear()
+    {
+        initialize();
+        fireLookActivated = true;
+        
+        if (hitInfo.transform.GetComponent<Fire>().GetIsFire())
+        {
+            actionText.gameObject.SetActive(true);
+            actionText.text = "선택된 아이템 불에 넣기" + "<color=yellow>" + "(E)" + "</color>";
+        }
+    }
+
+    private void CanDropFire()
+    {
+        if (fireLookActivated)
+        {
+            if(hitInfo.transform.tag == "Fire" && hitInfo.transform.GetComponent<Fire>().GetIsFire())
+            {
+                // 손에 들고 있는 아이템을 불에 넣기
+                Slot _selectedSlot = theQuickSlot.GetSelectedSlot();
+                if(_selectedSlot.item != null)
+                {
+                    DropAnItem(_selectedSlot);
+                }
+
+            }
+        }
+    }
+    private void DropAnItem(Slot _selectedSlot)
+    {
+        switch (_selectedSlot.item.itemType)
+        {
+            case Item.ItemType.Used:
+                if (_selectedSlot.item.itemName.Contains("고기"))
+                {
+                    Instantiate(_selectedSlot.item.itemPrefab, hitInfo.transform.position + Vector3.up, Quaternion.identity);
+                    _selectedSlot.SetSlotCount(-1);
+                    theQuickSlot.DecreaseSelectedItem();
+                }
+                break;
+            case Item.ItemType.Ingredient:
+                break;
+        }
+    }
+
     private void ItemInfoAppear()
     {
+        initialize();
         pickupActivated = true;
         actionText.gameObject.SetActive(true);
         actionText.text = hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "획득" + "<color=yellow>" + "(E)" + "</color>";
@@ -120,6 +181,7 @@ public class ActionController : MonoBehaviour
 
     private void MeatInfoAppear()
     {
+        initialize();
         if (hitInfo.transform.GetComponent<Animal>().isDead)
         {
             dissoveActivated = true;
@@ -132,6 +194,7 @@ public class ActionController : MonoBehaviour
     {
         pickupActivated = false;
         dissoveActivated = false;
+        fireLookActivated = false;
         actionText.gameObject.SetActive(false);
     }
 

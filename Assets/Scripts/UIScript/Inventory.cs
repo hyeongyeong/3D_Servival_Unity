@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
     private GameObject go_InventoryBase;
     [SerializeField]
     private GameObject go_QuickSlotParent;
+    [SerializeField]
+    private QuickSlotController theQuickslot;
 
     [SerializeField]
     private GameObject go_SlotsParent;
@@ -18,6 +20,8 @@ public class Inventory : MonoBehaviour
     private Slot[] slots;
     private Slot[] quickSlots;
     private bool isNotPut;
+
+    private int slotNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +64,10 @@ public class Inventory : MonoBehaviour
     public void AcquireItem(Item _item, int _count = 1)
     {
         PutSlot(quickSlots, _item, _count);
+        if (!isNotPut)
+        {
+            theQuickslot.IsActivatedQuickSlot(slotNumber);
+        } 
         if (isNotPut)
             PutSlot(slots, _item, _count);
         if (isNotPut)
@@ -74,6 +82,7 @@ public class Inventory : MonoBehaviour
             {
                 if (_slots[i].item != null && _slots[i].item.itemName == _item.itemName)
                 {
+                    slotNumber = i;
                     _slots[i].SetSlotCount(_count);
                     isNotPut = false;
                     return;

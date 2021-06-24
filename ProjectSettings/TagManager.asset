@@ -12,6 +12,7 @@ TagManager:
   - Player
   - GentleAnimal
   - PreemptiveAnimal
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Item
   - Player
   - Animal
-  - 
+  - Fire
   - 
   - 
   - 
