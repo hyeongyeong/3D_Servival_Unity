@@ -63,12 +63,15 @@ public class CraftManual : MonoBehaviour
 
     private void Build()
     {
-        Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
-        Destroy(go_Preview);
-        isActivated = false;
-        isPreviewActivated = false;
-        go_Preview = null;
-        go_Prefab = null;
+        if (go_Preview.GetComponent<PreviewObject>().isBuildable())
+        {
+            Instantiate(go_Prefab, hitInfo.point, Quaternion.identity);
+            Destroy(go_Preview);
+            isActivated = false;
+            isPreviewActivated = false;
+            go_Preview = null;
+            go_Prefab = null;
+        }
     }
 
     private void PreviewPositionUpdate()

@@ -559,3 +559,425 @@ System memory in use after: 155.1 MB.
 Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1969.
 Total: 1.917600 ms (FindLiveObjects: 0.151300 ms CreateObjectMapping: 0.034800 ms MarkObjects: 1.715000 ms  DeleteObjects: 0.015600 ms)
 
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005127 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.783 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1418 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.0 MB.
+System memory in use after: 155.1 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1972.
+Total: 1.759000 ms (FindLiveObjects: 0.141600 ms CreateObjectMapping: 0.034200 ms MarkObjects: 1.567200 ms  DeleteObjects: 0.015200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.006468 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.780 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1418 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.0 MB.
+System memory in use after: 155.1 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1975.
+Total: 1.770900 ms (FindLiveObjects: 0.138600 ms CreateObjectMapping: 0.045200 ms MarkObjects: 1.571100 ms  DeleteObjects: 0.014800 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Refreshing native plugins compatible for Editor in 3.78 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 11 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.2 MB.
+System memory in use after: 127.3 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1975.
+Total: 2.175500 ms (FindLiveObjects: 0.228200 ms CreateObjectMapping: 0.064200 ms MarkObjects: 1.867100 ms  DeleteObjects: 0.014700 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005753 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.778 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1418 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.0 MB.
+System memory in use after: 155.1 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1978.
+Total: 1.776100 ms (FindLiveObjects: 0.144800 ms CreateObjectMapping: 0.036700 ms MarkObjects: 1.578700 ms  DeleteObjects: 0.015100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1337.673447 seconds.
+  path: Assets/Scripts/PreviewObject.cs
+  artifactKey: Guid(4e771e5147ac57e47b79f4a5e046cbab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PreviewObject.cs using Guid(4e771e5147ac57e47b79f4a5e046cbab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee971412eead9a47e02801a4be82a8f') in 0.021475 seconds
+  Import took 0.024618 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005092 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.932 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1982.
+Total: 1.996900 ms (FindLiveObjects: 0.154400 ms CreateObjectMapping: 0.040300 ms MarkObjects: 1.784200 ms  DeleteObjects: 0.017000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005235 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.854 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1985.
+Total: 1.767000 ms (FindLiveObjects: 0.147600 ms CreateObjectMapping: 0.034700 ms MarkObjects: 1.568600 ms  DeleteObjects: 0.015100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 975.163202 seconds.
+  path: Assets/Scripts/PreviewObject.cs
+  artifactKey: Guid(4e771e5147ac57e47b79f4a5e046cbab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PreviewObject.cs using Guid(4e771e5147ac57e47b79f4a5e046cbab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c699b3587ed4555d544f5b4af1ec3145') in 0.007278 seconds
+  Import took 0.011089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.865289 seconds.
+  path: Assets/Prefabs/Building/Fire.prefab
+  artifactKey: Guid(b883f76bee26d394796d546eb14db2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building/Fire.prefab using Guid(b883f76bee26d394796d546eb14db2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da9d3d6968e139facee476804c41b295') in 0.099419 seconds
+  Import took 0.102439 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005378 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.801 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1989.
+Total: 1.940600 ms (FindLiveObjects: 0.144200 ms CreateObjectMapping: 0.037800 ms MarkObjects: 1.739400 ms  DeleteObjects: 0.018300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005729 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.782 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1992.
+Total: 1.893500 ms (FindLiveObjects: 0.142200 ms CreateObjectMapping: 0.043800 ms MarkObjects: 1.689200 ms  DeleteObjects: 0.017000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 220.731486 seconds.
+  path: Assets/Prefabs/Building/Fire_Preview.prefab
+  artifactKey: Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building/Fire_Preview.prefab using Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dd5ed1297990223f558ad79d45818a4') in 0.057050 seconds
+  Import took 0.060466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.868988 seconds.
+  path: Assets/Prefabs/Building/Fire_Preview.prefab
+  artifactKey: Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building/Fire_Preview.prefab using Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73eed17ae90cca02226b1836dde712e0') in 0.038464 seconds
+  Import took 0.041625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.033144 seconds.
+  path: Assets/Prefabs/Building/Fire_Preview.prefab
+  artifactKey: Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building/Fire_Preview.prefab using Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '677d1422ee92cd794f6cbc4aa22f8f45') in 0.048949 seconds
+  Import took 0.052460 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 119.374809 seconds.
+  path: Assets/Prefabs/Building/Fire.prefab
+  artifactKey: Guid(b883f76bee26d394796d546eb14db2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building/Fire.prefab using Guid(b883f76bee26d394796d546eb14db2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f9e7f872ae8489d44cc915a63bc480') in 0.054761 seconds
+  Import took 0.058730 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005388 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.799 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1996.
+Total: 1.734600 ms (FindLiveObjects: 0.142300 ms CreateObjectMapping: 0.034000 ms MarkObjects: 1.543200 ms  DeleteObjects: 0.014300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005352 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.772 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1999.
+Total: 1.719200 ms (FindLiveObjects: 0.139700 ms CreateObjectMapping: 0.037500 ms MarkObjects: 1.524600 ms  DeleteObjects: 0.016500 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005229 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.848 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2002.
+Total: 1.836800 ms (FindLiveObjects: 0.147300 ms CreateObjectMapping: 0.035400 ms MarkObjects: 1.631000 ms  DeleteObjects: 0.022200 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005072 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.840 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2005.
+Total: 1.750300 ms (FindLiveObjects: 0.152000 ms CreateObjectMapping: 0.035700 ms MarkObjects: 1.546700 ms  DeleteObjects: 0.015000 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005077 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.796 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.1 MB.
+System memory in use after: 155.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2008.
+Total: 2.097100 ms (FindLiveObjects: 0.139000 ms CreateObjectMapping: 0.035400 ms MarkObjects: 1.904200 ms  DeleteObjects: 0.017600 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005072 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.783 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.2 MB.
+System memory in use after: 155.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2011.
+Total: 2.030700 ms (FindLiveObjects: 0.150300 ms CreateObjectMapping: 0.041400 ms MarkObjects: 1.820700 ms  DeleteObjects: 0.017300 ms)
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005143 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.777 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.2 MB.
+System memory in use after: 155.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2014.
+Total: 1.864600 ms (FindLiveObjects: 0.140800 ms CreateObjectMapping: 0.038000 ms MarkObjects: 1.670800 ms  DeleteObjects: 0.014200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 587.406140 seconds.
+  path: Assets/Prefabs/Building/Fire_Preview.prefab
+  artifactKey: Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Building/Fire_Preview.prefab using Guid(4046e01d78c11fc47b0994d916345bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d2cbf0db55688c5e3bd3e50ed4e7f84') in 0.081471 seconds
+  Import took 0.083740 seconds .
+
+========================================================================
+Received Prepare
+Default GameObject Tag: Player already registered
+
+Registering precompiled user dll's ...
+Registered in 0.005277 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.777 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1419 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 155.2 MB.
+System memory in use after: 155.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2018.
+Total: 1.771900 ms (FindLiveObjects: 0.135900 ms CreateObjectMapping: 0.035200 ms MarkObjects: 1.585000 ms  DeleteObjects: 0.014900 ms)
+
