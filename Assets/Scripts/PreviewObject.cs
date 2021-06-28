@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PreviewObject : MonoBehaviour
 {
+    public Building.Type needType;
+    private bool needTypeFlag = false;
 
     private List<Collider> colliderList = new List<Collider>();
 
@@ -24,10 +26,20 @@ public class PreviewObject : MonoBehaviour
     }
     private void ChangeColor()
     {
-        if (colliderList.Count > 0)
-            SetColor(red); // 레드
+        if (needType == Building.Type.Normal)
+        {
+            if (colliderList.Count > 0)
+                SetColor(red); // 레드
+            else
+                SetColor(green); // 초록
+        }
         else
-            SetColor(green); // 초록
+        {
+            if (colliderList.Count > 0 || !needTypeFlag)
+                SetColor(red); // 레드
+            else
+                SetColor(green); // 초록
+        }
     }
 
     private void SetColor(Material mat)
@@ -46,18 +58,46 @@ public class PreviewObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer != layerGround && other.gameObject.layer != IGNORE_RAYCAST_LAYER)
-            colliderList.Add(other);
-
+        if(other.transform.tag == "Building")
+        {
+            if (other.GetComponent<Building>().type != needType)
+                colliderList.Add(other);
+            else
+                needTypeFlag = true;
+        }
+        else
+        {
+            if (other.gameObject.layer != layerGround && other.gameObject.layer != IGNORE_RAYCAST_LAYER)
+                colliderList.Add(other);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer != layerGround && other.gameObject.layer != IGNORE_RAYCAST_LAYER)
-            colliderList.Remove(other);
+        if (other.transform.tag == "Building")
+        {
+            if (other.GetComponent<Building>().type != needType)
+                colliderList.Remove(other);
+            else
+                needTypeFlag = false;
+        }
+        else
+        {
+            if (other.gameObject.layer != layerGround && other.gameObject.layer != IGNORE_RAYCAST_LAYER)
+                colliderList.Remove(other);
+        }
     }
 
     public bool isBuildable()
     {
-        return colliderList.Count == 0;
+        if(needType == Building.Type.Normal)
+            return colliderList.Count == 0;
+        else
+        {
+            Debug.Log("isBuildable  :" + needTypeFlag);
+            return colliderList.Count == 0 && needTypeFlag;
+            
+
+        }
+            
     }
 }

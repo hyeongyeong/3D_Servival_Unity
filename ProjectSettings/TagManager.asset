@@ -13,6 +13,7 @@ TagManager:
   - GentleAnimal
   - PreemptiveAnimal
   - Fire
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Animal
   - Fire
   - Terrain
-  - 
+  - Building
   - 
   - 
   - 
