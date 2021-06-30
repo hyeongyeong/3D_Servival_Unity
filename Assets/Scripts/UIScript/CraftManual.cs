@@ -132,7 +132,7 @@ public class CraftManual : MonoBehaviour
             for (int j = 0; j < craft_SelectedTab[i].craftNeedItemCount.Length; j++)
             {
                 text_SlotNeedItem[i - startSlotNumber].text += craft_SelectedTab[i].craftNeedItem[j];
-                text_SlotNeedItem[i - startSlotNumber].text += " X " + craft_SelectedTab[i].craftNeedItemCount[i] + "\n";
+                text_SlotNeedItem[i - startSlotNumber].text += " X " + craft_SelectedTab[i].craftNeedItemCount[j] + "\n";
             }
         }
     }
